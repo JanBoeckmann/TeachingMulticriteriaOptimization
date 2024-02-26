@@ -2,7 +2,7 @@ import os
 import pyscipopt as scip
 import time
 
-def solve_continuous_knapsack(wmax, items, type):
+def solve_knapsack(wmax, items, type):
     # Create a new SCIP instance
     prob = scip.Model("Continuous Knapsack")
 
@@ -58,7 +58,7 @@ def main():
     # Solve knapsack problem C for continuous, B for binary
     # type = "C"
     type = "B"
-    obj_val, solution, solve_time = solve_continuous_knapsack(wmax, items, type)
+    obj_val, solution, solve_time = solve_knapsack(wmax, items, type)
 
     print("Optimal objective value:", obj_val)
     print("Solution (fraction of each item):", solution)
